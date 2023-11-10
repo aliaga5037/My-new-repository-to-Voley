@@ -1,0 +1,30 @@
+.promo {
+  padding: 15px;
+}
+
+.promo-content {
+  justify-content: center;
+  align-items: center;
+  background: rgb(201, 204, 204);
+  border-radius: 4px;
+  display: flex;
+  width: 60%;
+  height: 75vh;
+
+  align-items: center;
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+  .promo-content {
+    justify-content: center;
+    align-items: center;
+    background: rgb(201, 204, 204);
+    border-radius: 5px;
+    display: flex;
+    width: 100%;
+
+    color: rgb(255, 255, 255);
+  }
+}
