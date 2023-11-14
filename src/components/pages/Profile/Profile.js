@@ -38,14 +38,14 @@ const Profile = ({ isAuthenticated, setIsAuthenticated }) => {
     <div>
       {isAuthenticated && (
         <div>
-          <button onClick={openModal}>Open Profile</button>
-          <Modal
+          {/* <button onClick={openModal}>Open Profile</button> */}
+          {/* <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
             contentLabel="Profile Modal"
             className="modal" // Добавьте класс для стилизации модального окна
             overlayClassName="modal-overlay" // Добавьте класс для стилизации подложки
-          >
+          > */}
             <span className="modal-close" onClick={closeModal}>
               &times;
             </span>
@@ -57,7 +57,7 @@ const Profile = ({ isAuthenticated, setIsAuthenticated }) => {
               <p>Gender: {userData.gender}</p>
               <button onClick={closeModal}>Close Profile</button>
             </div>
-          </Modal>
+          {/* </Modal> */}
         </div>
       )}
     </div>

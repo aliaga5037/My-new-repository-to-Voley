@@ -1,15 +1,21 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Promo from "./components/promo";
 import Footer from "./components/footer";
 import Events from "./components/pages/events";
 import SignIn from "../src/components/pages/signIn";
 import SignUp from "../src/components/pages/SignUp";
-import Profile from "../src/components/pages/Profile";
+import Profile from "./components/pages/Profile/Profile";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const isAuth = localStorage.getItem("isAuthenticated");
+
+    setIsAuthenticated(isAuth);
+  }, []);
 
   return (
     <Router>

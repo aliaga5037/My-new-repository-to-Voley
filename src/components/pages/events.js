@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import "../pages/events.css";
 import { FaMapMarkerAlt, FaCalendarAlt, FaClock } from "react-icons/fa";
 
 Modal.setAppElement("#root");
 
+// TODO: Create event logikasini ayir 
 const Events = ({ isAuthenticated }) => {
   const [teams, setTeams] = useState([]);
   const [joinedTeams, setJoinedTeams] = useState([]);
@@ -17,6 +18,11 @@ const Events = ({ isAuthenticated }) => {
   const [timeInputValue, setTimeInputValue] = useState("");
   const [playerNames, setPlayerNames] = useState(Array(18).fill(""));
 
+  useEffect(() => {
+    const events = JSON.parse(localStorage.getItem("events")) || [];
+    setTeams(events);
+  }, []);
+
   const handleCreateGame = (e) => {
     e.preventDefault();
     if (joinedTeams.length < 2) {
@@ -25,6 +31,7 @@ const Events = ({ isAuthenticated }) => {
   };
 
   const handleJoin = (index) => {
+    // TODO: localstorage-dan eventi tap player listi update ele, eventleri update ele
     const selectedTeam = teams[index];
 
     if (!joinedTeams.includes(selectedTeam.name)) {
@@ -53,6 +60,7 @@ const Events = ({ isAuthenticated }) => {
       .filter((name, i) => i < joinedPlayersCount[selectedTeam.name])
       .map((name) => name || "Unnamed Player");
 
+      // TODO: alertin yerine modal duzelt
     alert(`Players in ${selectedTeam.name}: ${players.join(", ")}`);
   };
 
@@ -75,6 +83,13 @@ const Events = ({ isAuthenticated }) => {
         };
 
         setTeams([...teams, newTeam]);
+        let events = JSON.parse(localStorage.getItem("events")) || [];
+        if (!events.length) {
+          localStorage.setItem("events", JSON.stringify([newTeam]));
+        } else {
+          localStorage.setItem("events", JSON.stringify([...events, newTeam]));
+        }
+
         setShowModal(false);
       } else {
         alert("Please fill in all required fields.");
