@@ -1,0 +1,62 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: fit-content; /* Замените на желаемую ширину */
+  height: auto; /* Замените на желаемую высоту */
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+}
+
+.modal p {
+  margin: 10px 0;
+}
+
+.modal button {
+  background: #3498db;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
+
+/* Стили для закрытия модального окна */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+}
+
+.modal-user-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.modal-user-text p,
+h2 {
+  margin-top: 1px;
+  margin-bottom: 5px;
+  font-weight: 300;
+}

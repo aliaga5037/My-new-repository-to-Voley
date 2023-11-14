@@ -2,14 +2,14 @@
   padding: 12px 50px;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  width: 100%;
   background: #001736;
 }
 
 .footer-logo-image {
   display: flex;
   align-items: center;
-  width: 50%;
+  width: 20%;
   height: auto;
   justify-content: center;
   margin: 0 auto;
@@ -57,7 +57,7 @@
   }
 
   .footer-logo-image {
-    width: 40%;
+    width: 18%;
 
     margin: 0 auto;
   }

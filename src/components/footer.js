@@ -1,4 +1,4 @@
-import logoImg from "../../src/logo.svg";
+import logoImg from "../../src/logo_3.svg";
 import "../components/footer.css";
 
 const Footer = () => {

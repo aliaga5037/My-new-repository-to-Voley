@@ -1,40 +1,55 @@
+// Header.js
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import logoImg from "../../src/logo_3.svg";
 import "../components/header.css";
-import logoImg from "../../src/logo.svg";
-import Event from "./pages/events";
 
-const Header = () => {
+const Header = ({ isAuthenticated, openProfile }) => {
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    // Добавьте здесь логику для выхода пользователя (если требуется)
+    // После успешного выхода установите isAuthenticated в false
+    // и перенаправьте пользователя на страницу входа
+    navigate("/signin");
+  };
+
   return (
     <div className="header" id="masthead">
       <div className="container">
         <div className="header_row">
           <div className="header__logo">
-            <img src={logoImg}></img>
+            <img src={logoImg} alt="Logo" />
           </div>
           <nav className="header__nav">
             <ul>
               <li>
-                <a href="#!" className="border-bottom">
-                  Media
-                </a>
+                <Link to="/promo">Promo</Link>
               </li>
               <li>
-                <a href="events.js" target="_blank" className="border-bottom">
-                  Events
-                </a>
+                <Link to="/events">Events</Link>
               </li>
               <li>
-                <a href="#!" className="border-bottom">
-                  Ranks
-                </a>
+                <a href="#!">Ranks</a>
               </li>
+              {isAuthenticated && (
+                <React.Fragment>
+                  <li>
+                    <Link to="/profile" onClick={openProfile}>
+                      Profile
+                    </Link>
+                  </li>
+                </React.Fragment>
+              )}
             </ul>
           </nav>
-          <div className="signin">
-            <a href="#!" className="signin-bottom">
-              Sign in
-            </a>
-          </div>
+          {!isAuthenticated && (
+            <div className="signin">
+              <Link to="/signin" className="signin-bottom">
+                Sign in
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

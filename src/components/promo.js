@@ -1,4 +1,5 @@
 import "../components/promo.css";
+
 const Promo = () => {
   return (
     <section className="promo">

@@ -1,0 +1,62 @@
+/* SignIn.css */
+.signIn-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signIn-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signIn-label {
+  margin-bottom: 10px;
+}
+
+.signIn-input {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.signIn-input:focus {
+  border-color: #007bff;
+}
+
+.signIn-button,
+.signUp-button {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box; /* Учитываем внутренние отступы и границы в размере элемента */
+}
+
+.signIn-button {
+  background-color: #007bff;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.signIn-button:hover {
+  background-color: #0056b3;
+}
+
+.signUp-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.signUp-button:hover {
+  background-color: #218838;
+}
